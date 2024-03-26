@@ -31,27 +31,15 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AutoAggro));
             this.timerStopAttack = new System.Windows.Forms.Timer(this.components);
-            this.btnGetMonsterInfo = new DarkUI.Controls.DarkButton();
             this.darkLabel8 = new DarkUI.Controls.DarkLabel();
             this.txtMapName = new DarkUI.Controls.DarkLabel();
             this.cbAutoAggro = new DarkUI.Controls.DarkCheckBox();
-            this.txtTest = new DarkUI.Controls.DarkLabel();
+            this.txtAggroText = new DarkUI.Controls.DarkLabel();
             this.darkLabel9 = new DarkUI.Controls.DarkLabel();
             this.darkLabel10 = new DarkUI.Controls.DarkLabel();
             this.numAggroDelay = new DarkUI.Controls.DarkNumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.numAggroDelay)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnGetMonsterInfo
-            // 
-            this.btnGetMonsterInfo.Checked = false;
-            this.btnGetMonsterInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGetMonsterInfo.Location = new System.Drawing.Point(28, 54);
-            this.btnGetMonsterInfo.Name = "btnGetMonsterInfo";
-            this.btnGetMonsterInfo.Size = new System.Drawing.Size(175, 42);
-            this.btnGetMonsterInfo.TabIndex = 26;
-            this.btnGetMonsterInfo.Text = "Get Monster Info";
-            this.btnGetMonsterInfo.Click += new System.EventHandler(this.btnGetMonsterInfo_Click);
             // 
             // darkLabel8
             // 
@@ -79,29 +67,29 @@
             // 
             this.cbAutoAggro.AutoSize = true;
             this.cbAutoAggro.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbAutoAggro.Location = new System.Drawing.Point(28, 138);
+            this.cbAutoAggro.Location = new System.Drawing.Point(22, 81);
             this.cbAutoAggro.Name = "cbAutoAggro";
             this.cbAutoAggro.Size = new System.Drawing.Size(197, 26);
             this.cbAutoAggro.TabIndex = 30;
             this.cbAutoAggro.Text = "Enable Auto Aggro";
             this.cbAutoAggro.CheckedChanged += new System.EventHandler(this.cbAutoAggro_CheckedChanged);
             // 
-            // txtTest
+            // txtAggroText
             // 
-            this.txtTest.AutoSize = true;
-            this.txtTest.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTest.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.txtTest.Location = new System.Drawing.Point(23, 178);
-            this.txtTest.Name = "txtTest";
-            this.txtTest.Size = new System.Drawing.Size(19, 13);
-            this.txtTest.TabIndex = 42;
-            this.txtTest.Text = "aa";
+            this.txtAggroText.AutoSize = true;
+            this.txtAggroText.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAggroText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.txtAggroText.Location = new System.Drawing.Point(25, 121);
+            this.txtAggroText.Name = "txtAggroText";
+            this.txtAggroText.Size = new System.Drawing.Size(19, 13);
+            this.txtAggroText.TabIndex = 42;
+            this.txtAggroText.Text = "aa";
             // 
             // darkLabel9
             // 
             this.darkLabel9.AutoSize = true;
             this.darkLabel9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel9.Location = new System.Drawing.Point(168, 113);
+            this.darkLabel9.Location = new System.Drawing.Point(162, 56);
             this.darkLabel9.Name = "darkLabel9";
             this.darkLabel9.Size = new System.Drawing.Size(20, 13);
             this.darkLabel9.TabIndex = 45;
@@ -111,7 +99,7 @@
             // 
             this.darkLabel10.AutoSize = true;
             this.darkLabel10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel10.Location = new System.Drawing.Point(31, 111);
+            this.darkLabel10.Location = new System.Drawing.Point(25, 54);
             this.darkLabel10.Name = "darkLabel10";
             this.darkLabel10.Size = new System.Drawing.Size(68, 13);
             this.darkLabel10.TabIndex = 44;
@@ -124,7 +112,7 @@
             0,
             0,
             65536});
-            this.numAggroDelay.Location = new System.Drawing.Point(105, 109);
+            this.numAggroDelay.Location = new System.Drawing.Point(99, 52);
             this.numAggroDelay.LoopValues = false;
             this.numAggroDelay.Maximum = new decimal(new int[] {
             60000,
@@ -149,15 +137,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(305, 210);
+            this.ClientSize = new System.Drawing.Size(339, 150);
             this.Controls.Add(this.darkLabel9);
             this.Controls.Add(this.darkLabel10);
             this.Controls.Add(this.numAggroDelay);
-            this.Controls.Add(this.txtTest);
+            this.Controls.Add(this.txtAggroText);
             this.Controls.Add(this.cbAutoAggro);
             this.Controls.Add(this.txtMapName);
             this.Controls.Add(this.darkLabel8);
-            this.Controls.Add(this.btnGetMonsterInfo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AutoAggro";
@@ -173,11 +160,10 @@
 
         #endregion
         private System.Windows.Forms.Timer timerStopAttack;
-        private DarkUI.Controls.DarkButton btnGetMonsterInfo;
         private DarkUI.Controls.DarkLabel darkLabel8;
         private DarkUI.Controls.DarkLabel txtMapName;
         public DarkUI.Controls.DarkCheckBox cbAutoAggro;
-        private DarkUI.Controls.DarkLabel txtTest;
+        private DarkUI.Controls.DarkLabel txtAggroText;
         private DarkUI.Controls.DarkLabel darkLabel9;
         private DarkUI.Controls.DarkLabel darkLabel10;
         private DarkUI.Controls.DarkNumericUpDown numAggroDelay;

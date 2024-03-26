@@ -1,22 +1,14 @@
 ﻿using System;
-using System.Diagnostics;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Grimoire.Game;
 using Grimoire.Networking;
 using DarkUI.Forms;
 using Grimoire.Tools;
-using System.IO;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Grimoire.UI;
-using Grimoire.Game.Data;
-using System.Linq;
 using System.Collections.Generic;
-using Grimoire.Botting.Commands.Map;
-using Grimoire.Botting.Commands.Misc.Statements;
-using Grimoire.Botting;
-using DarkUI.Controls;
 
 namespace AutoAggro
 {
@@ -76,7 +68,7 @@ namespace AutoAggro
                     string MonMapID = monmapItem.MonMapID;
                     string strFrame = monmapItem.strFrame;
 
-					debug($"MonMapID: {MonMapID}, strFrame: {strFrame}");
+					//debug($"MonMapID: {MonMapID}, strFrame: {strFrame}");
                     if (!groupedMonmap.ContainsKey(strFrame))
                     {
                         groupedMonmap[strFrame] = new List<string>();
@@ -85,7 +77,7 @@ namespace AutoAggro
                     groupedMonmap[strFrame].Add(MonMapID);
                 }
                 monsterInfo = JsonConvert.SerializeObject(groupedMonmap);
-				debug(monsterInfo);
+				//debug(monsterInfo);
                 if (jsonMessage != null)
 				{
                     if (jsonMessage.DataObject?["strMapName"] != null)
